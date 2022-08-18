@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>junmanbo</title>
+    <link>http://junmanbo.github.io/</link>
+    <description>Recent content on junmanbo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="http://junmanbo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://junmanbo.github.io/about/</link>
+      <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://junmanbo.github.io/about/</guid>
+      <description>제가 사용하는 IT 기술에 대한 기록을 남기고 제 일상을 공유하고자 합니다. :)
+Hugo makes use of a variety of open source projects including:
+https://github.com/yuin/goldmark https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper If you curious about my work, visit my github site. GitHub.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://junmanbo.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://junmanbo.github.io/contact/</guid>
+      <description>Follow me, @junmanbo.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://junmanbo.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://junmanbo.github.io/projects/</guid>
+      <description> 자율주행 순찰차: smart-car 도서 추천 챗봇: It-GGi </description>
+    </item>
+    
+  </channel>
+</rss>
