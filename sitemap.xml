@@ -2,21 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://junmanbo.github.io/authors/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/categories/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/authors/jun/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/posts/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/tags/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/tags/test/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/categories/test/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/posts/test/</loc>
+    <lastmod>2022-08-18T17:32:29+09:00</lastmod>
+  </url><url>
     <loc>http://junmanbo.github.io/about/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://junmanbo.github.io/authors/</loc>
-  </url><url>
-    <loc>http://junmanbo.github.io/categories/</loc>
-  </url><url>
     <loc>http://junmanbo.github.io/contact/</loc>
-  </url><url>
-    <loc>http://junmanbo.github.io/</loc>
   </url><url>
     <loc>http://junmanbo.github.io/projects/</loc>
   </url><url>
     <loc>http://junmanbo.github.io/series/</loc>
-  </url><url>
-    <loc>http://junmanbo.github.io/tags/</loc>
   </url>
 </urlset>

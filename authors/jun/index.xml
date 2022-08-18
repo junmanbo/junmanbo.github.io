@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jun on junmanbo</title>
+    <link>http://junmanbo.github.io/authors/jun/</link>
+    <description>Recent content in jun on junmanbo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Aug 2022 17:32:29 +0900</lastBuildDate><atom:link href="http://junmanbo.github.io/authors/jun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test post</title>
+      <link>http://junmanbo.github.io/posts/test/</link>
+      <pubDate>Thu, 18 Aug 2022 17:32:29 +0900</pubDate>
+      
+      <guid>http://junmanbo.github.io/posts/test/</guid>
+      <description> 이건 테스트 포스트 입니다. Link to heading 테스트가 통과하면 본격적으로 글을 쓸 예정입니다. </description>
+    </item>
+    
+  </channel>
+</rss>
