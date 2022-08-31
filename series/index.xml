@@ -5,6 +5,16 @@
     <link>http://junmanbo.github.io/series/</link>
     <description>Recent content in Series on junmanbo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://junmanbo.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Aug 2022 18:07:20 +0900</lastBuildDate><atom:link href="http://junmanbo.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PFC</title>
+      <link>http://junmanbo.github.io/series/pfc/</link>
+      <pubDate>Wed, 31 Aug 2022 18:07:20 +0900</pubDate>
+      
+      <guid>http://junmanbo.github.io/series/pfc/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

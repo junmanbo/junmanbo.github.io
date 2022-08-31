@@ -6,7 +6,16 @@
     <description>Recent content in Posts on junmanbo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://junmanbo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2022 18:07:20 +0900</lastBuildDate><atom:link href="http://junmanbo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>역률 보상 회로 만들기</title>
+      <link>http://junmanbo.github.io/posts/pfc/</link>
+      <pubDate>Wed, 31 Aug 2022 18:07:20 +0900</pubDate>
+      
+      <guid>http://junmanbo.github.io/posts/pfc/</guid>
+      <description>1. 소개 Link to heading Power Factor Correction 역률 개선은 왜 필요할까? Link to heading 전동기 등 유도성 부하의 소비전력 변동에 따라 무효전력 발생량이 달라지는데 이에 따라 역률에 부정적인 영향을 미친다. 교류에서 피상 전력은 전압과 전류 사이의 위상차를 증가시켜 실제 전력보다 커지고 시스템의 전력 효율은 떨어진다. 위와 같이 위상차를 줄여서 역률을 개선할 수 있다. 역률을 개선하면 전력손실이 감소하므로 경제적으로 매우 이득이다. 위상차는 어떻게 줄일까? Link to heading Resistive 회로의 경우 전압과 전류의 위상차가 발생하지 않는다.</description>
+    </item>
+    
     <item>
       <title>Test post</title>
       <link>http://junmanbo.github.io/posts/test/</link>

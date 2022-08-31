@@ -3,22 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://junmanbo.github.io/authors/</loc>
-    <lastmod>2022-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
   </url><url>
     <loc>http://junmanbo.github.io/categories/</loc>
-    <lastmod>2022-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/tags/electrical/</loc>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/categories/electrical/</loc>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
   </url><url>
     <loc>http://junmanbo.github.io/authors/jun/</loc>
-    <lastmod>2022-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
   </url><url>
     <loc>http://junmanbo.github.io/</loc>
-    <lastmod>2022-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/series/pfc/</loc>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
   </url><url>
     <loc>http://junmanbo.github.io/posts/</loc>
-    <lastmod>2022-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/tags/powerfactor/</loc>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/series/</loc>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
   </url><url>
     <loc>http://junmanbo.github.io/tags/</loc>
-    <lastmod>2022-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
+  </url><url>
+    <loc>http://junmanbo.github.io/posts/pfc/</loc>
+    <lastmod>2022-08-31T18:07:20+09:00</lastmod>
   </url><url>
     <loc>http://junmanbo.github.io/tags/test/</loc>
     <lastmod>2022-08-18T00:00:00+00:00</lastmod>
@@ -35,7 +53,5 @@
     <loc>http://junmanbo.github.io/contact/</loc>
   </url><url>
     <loc>http://junmanbo.github.io/projects/</loc>
-  </url><url>
-    <loc>http://junmanbo.github.io/series/</loc>
   </url>
 </urlset>
