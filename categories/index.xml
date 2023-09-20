@@ -6,21 +6,13 @@
         <description>Recent content in Categories on Jun&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://junmanbo.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Test</title>
-        <link>https://junmanbo.github.io/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <lastBuildDate>Wed, 20 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://junmanbo.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Infra</title>
+        <link>https://junmanbo.github.io/categories/infra/</link>
+        <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://junmanbo.github.io/categories/test/</guid>
-        <description>&lt;img src="https://junmanbo.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>https://junmanbo.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://junmanbo.github.io/categories/%E6%B5%8B%E8%AF%95/</guid>
-        <description></description>
+        <guid>https://junmanbo.github.io/categories/infra/</guid>
+        <description>&lt;img src="https://junmanbo.github.io/categories/infra/cloud_server.png" alt="Featured image of post Infra" /&gt;</description>
         </item>
         <item>
         <title>syntax</title>
@@ -39,19 +31,19 @@
         <description></description>
         </item>
         <item>
-        <title>تجربة</title>
-        <link>https://junmanbo.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</link>
+        <title>Test</title>
+        <link>https://junmanbo.github.io/categories/test/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://junmanbo.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</guid>
-        <description></description>
+        <guid>https://junmanbo.github.io/categories/test/</guid>
+        <description>&lt;img src="https://junmanbo.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         <item>
-        <title>تجربة مع فراغات</title>
-        <link>https://junmanbo.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</link>
+        <title>Test with whitespaces</title>
+        <link>https://junmanbo.github.io/categories/test-with-whitespaces/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://junmanbo.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</guid>
+        <guid>https://junmanbo.github.io/categories/test-with-whitespaces/</guid>
         <description></description>
         </item>
         
