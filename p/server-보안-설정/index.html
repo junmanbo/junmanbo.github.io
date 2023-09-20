@@ -266,18 +266,18 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#1-접속-log-확인">1. 접속 Log 확인</a></li>
-        <li><a href="#2-외부에서-조치">2. 외부에서 조치</a>
+        <li><a href="#접속-log-확인">접속 Log 확인</a></li>
+        <li><a href="#외부에서-조치">외부에서 조치</a>
           <ol>
-            <li><a href="#1-ssh-key-이용">1) SSH Key 이용</a></li>
-            <li><a href="#2-보안-그룹-설정">2) 보안 그룹 설정</a></li>
+            <li><a href="#ssh-key-이용">SSH Key 이용</a></li>
+            <li><a href="#보안-그룹-설정">보안 그룹 설정</a></li>
           </ol>
         </li>
-        <li><a href="#3-내부에서-조치">3. 내부에서 조치</a>
+        <li><a href="#내부에서-조치">내부에서 조치</a>
           <ol>
-            <li><a href="#1-포트-변경">1) 포트 변경</a></li>
-            <li><a href="#2-fail2ban">2) fail2ban</a></li>
-            <li><a href="#3-방화벽-설정">3) 방화벽 설정</a></li>
+            <li><a href="#포트-변경">포트 변경</a></li>
+            <li><a href="#fail2ban">fail2ban</a></li>
+            <li><a href="#방화벽-설정">방화벽 설정</a></li>
           </ol>
         </li>
       </ol>
@@ -367,38 +367,44 @@
     
     <p>서비스를 하다 보니 내 서버를 누가 털어가지 않을까 항상 걱정이 된다.<br>
 그래서 기초적인 보안 설정으로 서버에 들어오는걸 막아보고자 한다.</p>
-<h3 id="1-접속-log-확인">1. 접속 Log 확인</h3>
+<h3 id="접속-log-확인">접속 Log 확인</h3>
 <p>우선 누가 실제로 접속을 시도했는지 확인해 봤다.</p>
 <ul>
 <li>
-<p>ssh 로그를 확인<br>
-<code>/var/log/auth.log</code>에서 서버에 접속한 기록들을 볼 수 있다.</p>
+<p>SSH 로그를 확인</p>
+<ul>
+<li><code>/var/log/auth.log</code>에서 서버에 접속한 기록들을 볼 수 있다.</li>
+</ul>
 </li>
 <li>
-<p>Brute force로 접속 시도
-<code>grep sshd.*Did /var/log/auth.log | less</code></p>
+<p>Brute force로 접속 시도</p>
+<ul>
+<li><code>grep sshd.*Did /var/log/auth.log | less</code></li>
+</ul>
 </li>
 <li>
-<p>접속 시도 했으나 실패한 내용만
-<code>grep sshd.Failed /var/log/auth.log | less</code>
-그런데 이미 누가 접속을 성공해서 내 서버를 마음대로 쓰고 있을 수 있기 때문에 실패한 걸로만 보고 안심하면 안 된다.
-실제로 내 AWS EC2서버에 내 IP외의 수 많은 IP들이 찍혀 있어서 위치를 알아봤더니 미국, 유럽, 이란 등 다양하게 찍혀 있었다.</p>
+<p>접속 시도 했으나 실패한 내용만</p>
+<ul>
+<li><code>grep sshd.Failed /var/log/auth.log | less</code></li>
+</ul>
 </li>
 </ul>
-<h3 id="2-외부에서-조치">2. 외부에서 조치</h3>
-<h4 id="1-ssh-key-이용">1) SSH Key 이용</h4>
+<p>그런데 이미 누가 접속을 성공해서 내 서버를 마음대로 쓰고 있을 수 있기 때문에 실패한 걸로만 보고 안심하면 안 된다.<br>
+실제로 내 AWS EC2서버에 내 IP외의 수 많은 IP들이 찍혀 있어서 위치를 알아봤더니 미국, 유럽, 이란 등 다양하게 찍혀 있었다.</p>
+<h3 id="외부에서-조치">외부에서 조치</h3>
+<h4 id="ssh-key-이용">SSH Key 이용</h4>
 <p>비밀번호 보단 SSH Key를 이용하는게 좋다.<br>
-<code>/etc/ssh/sshd_config</code> 에서 password_authentication을 no로 바꾼다. 비밀번호로 접근하는 걸 아예 막아버린다.
+<code>/etc/ssh/sshd_config</code> 에서 <code>password_authentication</code>을 <code>no</code>로 바꾼다. 비밀번호로 접근하는 걸 아예 막아버린다.<br>
 그리고 키를 사용할 땐 키 관리를 잘해야 한다. 실수로 github에 같이 올려버리면 안 된다.<br>
 key는 보통 <code>.ssh</code> directory 안에 두고 권한은 700으로 키 권한은 400으로 설정하여 아무나 쓰지 못하도록 해 놓는다.</p>
-<h4 id="2-보안-그룹-설정">2) 보안 그룹 설정</h4>
+<h4 id="보안-그룹-설정">보안 그룹 설정</h4>
 <p>AWS, Azure, GCP 와 같은 클라우드 서비스를 사용한다면 인바운드를 내 IP만 허용한다. 집에서 서버를 돌린다면 공유기의 네트워크 규칙을 바꾸거나 포트포워딩 설정시 IP를 제한한다.<br>
 하지만 허용된 IP에서만 접속할 수 있기 때문에 접속할 수 있는 장소가 한정적이게 된다. 작업은 집에서도 카페에서도 할 수 있기 때문에 IP가 매번 바뀐다. 그래서 VPN을 사용해서 해당 IP를 등록해 놓고 서버에 접속할 때는 VPN을 통해서만 접속한다. Lightsail에 WireGaurd를 돌리고 있는데 저렴하고 사용하기 편하다.</p>
-<h3 id="3-내부에서-조치">3. 내부에서 조치</h3>
-<h4 id="1-포트-변경">1) 포트 변경</h4>
+<h3 id="내부에서-조치">내부에서 조치</h3>
+<h4 id="포트-변경">포트 변경</h4>
 <p>SSH 포트를 바꿔준다. SSH포트는 기본적으로 22번이고 모두가 알기 때문에 공격 받기 쉽다.
 체감상 포트만 바꿔줘도 반 정도 시도가 줄어드는 것 같다. <code>/etc/ssh/sshd_config</code>에서 바꿀 수 있다.</p>
-<h4 id="2-fail2ban">2) fail2ban</h4>
+<h4 id="fail2ban">fail2ban</h4>
 <p>다음으로 fail2ban을 사용하여 몇 번 이상 접속을 시도했다가 실패한 경우 Ban 시킨다. (서버를 재부팅하거나 fail2ban서비스를 재시작하면 Ban이 풀린다.)<br>
 <code>/etc/fail2ban/jail.local</code> 파일을 생성해서 원하는대로 설정하면 된다.</p>
 <div class="highlight"><div class="chroma">
@@ -463,7 +469,7 @@ logpath=/var/log/auth.log
 </ul>
 </li>
 </ul>
-<h4 id="3-방화벽-설정">3) 방화벽 설정</h4>
+<h4 id="방화벽-설정">방화벽 설정</h4>
 <p>iptables로 할 수 있지만 요즘엔 ufw가 기본으로 사용되어서(최신 ubuntu의 경우) ufw를 사용해서 방화벽을 설정했다.<br>
 설정을 해 놓고 포트를 변경하면 다시 방화벽 설정을 바꿔줘야 하므로 미리 바꿀 포트는 바꾸고 설정하는게 편하다.</p>
 <ul>
