@@ -1,43 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Categories on Jun&#39;s Blog</title>
-        <link>https://junmanbo.github.io/categories/</link>
-        <description>Recent content in Categories on Jun&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Wed, 20 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://junmanbo.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Infra</title>
-        <link>https://junmanbo.github.io/categories/infra/</link>
-        <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
-        
-        <guid>https://junmanbo.github.io/categories/infra/</guid>
-        <description>&lt;img src="https://junmanbo.github.io/categories/infra/cloud_server.png" alt="Featured image of post Infra" /&gt;</description>
-        </item>
-        <item>
-        <title>syntax</title>
-        <link>https://junmanbo.github.io/categories/syntax/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://junmanbo.github.io/categories/syntax/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>themes</title>
-        <link>https://junmanbo.github.io/categories/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://junmanbo.github.io/categories/themes/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Test</title>
-        <link>https://junmanbo.github.io/categories/test/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://junmanbo.github.io/categories/test/</guid>
-        <description>&lt;img src="https://junmanbo.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Categories on Jun&#39;s Blog</title>
+    <link>https://junmanbo.github.io/categories/</link>
+    <description>Recent content in Categories on Jun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <atom:link href="https://junmanbo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
 </rss>

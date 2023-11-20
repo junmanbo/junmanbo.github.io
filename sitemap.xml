@@ -3,63 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://junmanbo.github.io/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-21T04:05:47+09:00</lastmod>
+  </url><url>
+    <loc>https://junmanbo.github.io/posts/</loc>
+    <lastmod>2023-11-21T04:05:47+09:00</lastmod>
+  </url><url>
+    <loc>https://junmanbo.github.io/posts/basic-server-sec/</loc>
+    <lastmod>2023-11-21T04:05:47+09:00</lastmod>
+  </url><url>
+    <loc>https://junmanbo.github.io/posts/test-post/</loc>
+    <lastmod>2023-10-28T11:49:11+09:00</lastmod>
   </url><url>
     <loc>https://junmanbo.github.io/categories/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/categories/infra/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/tags/infra/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/post/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/tags/server/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/p/server-%EB%B3%B4%EC%95%88-%EC%84%A4%EC%A0%95/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://junmanbo.github.io/tags/</loc>
-    <lastmod>2023-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/page/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/tags/css/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/tags/html/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/tags/markdown/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/p/markdown-syntax-guide/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/tags/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junmanbo.github.io/links/</loc>
-  </url><url>
-    <loc>https://junmanbo.github.io/search/</loc>
-  </url><url>
-    <loc>https://junmanbo.github.io/categories/test/</loc>
   </url>
 </urlset>
