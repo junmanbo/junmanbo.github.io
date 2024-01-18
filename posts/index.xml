@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Jun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 21 Nov 2023 04:05:47 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jan 2024 15:46:28 +0900</lastBuildDate>
     <atom:link href="https://junmanbo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mattermost</title>
+      <link>https://junmanbo.github.io/posts/mattermost/</link>
+      <pubDate>Thu, 18 Jan 2024 15:46:28 +0900</pubDate>
+      <guid>https://junmanbo.github.io/posts/mattermost/</guid>
+      <description>Slack+Notion 을 하나로 Mattermost Mattermost 란? mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다. 그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다. 즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다. self-hosting이 가능하여 직접 구축하고 운영 가능하다. mattermost 설치 간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다. 최신 버전의 mattermost 프로그램 다운로드 + 압축 풀기 + 옮기기 + data 디렉토리 생성 wget https://releases.</description>
+    </item>
     <item>
       <title>기본 서버 보안 설정</title>
       <link>https://junmanbo.github.io/posts/basic-server-sec/</link>

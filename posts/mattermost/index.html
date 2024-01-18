@@ -1,0 +1,504 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="ko-kr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Mattermost - Jun&#39;s Blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Slack&#43;Notion 을 하나로 Mattermost Mattermost 란? mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다. 그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다. 즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다. self-hosting이 가능하여 직접 구축하고 운영 가능하다. mattermost 설치 간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다. 최신 버전의 mattermost 프로그램 다운로드 &#43; 압축 풀기 &#43; 옮기기 &#43; data 디렉토리 생성 wget https://releases." />
+  <meta name="author" content="Byeong Jun Kim" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://junmanbo.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://junmanbo.github.io/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/63fbb3d8610cb35740025d0020d3232a?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://junmanbo.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://junmanbo.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://junmanbo.github.io/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://junmanbo.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://junmanbo.github.io/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () =>
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          
+          throwOnError : false
+        })
+    );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://junmanbo.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://junmanbo.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.121.2">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Mattermost">
+<meta itemprop="description" content="Slack&#43;Notion 을 하나로 Mattermost Mattermost 란? mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다. 그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다. 즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다. self-hosting이 가능하여 직접 구축하고 운영 가능하다. mattermost 설치 간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다. 최신 버전의 mattermost 프로그램 다운로드 &#43; 압축 풀기 &#43; 옮기기 &#43; data 디렉토리 생성 wget https://releases."><meta itemprop="datePublished" content="2024-01-18T15:46:28+09:00" />
+<meta itemprop="dateModified" content="2024-01-18T15:46:28+09:00" />
+<meta itemprop="wordCount" content="349">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="Mattermost" />
+<meta property="og:description" content="Slack&#43;Notion 을 하나로 Mattermost Mattermost 란? mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다. 그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다. 즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다. self-hosting이 가능하여 직접 구축하고 운영 가능하다. mattermost 설치 간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다. 최신 버전의 mattermost 프로그램 다운로드 &#43; 압축 풀기 &#43; 옮기기 &#43; data 디렉토리 생성 wget https://releases." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junmanbo.github.io/posts/mattermost/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-18T15:46:28+09:00" />
+<meta property="article:modified_time" content="2024-01-18T15:46:28+09:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Mattermost"/>
+<meta name="twitter:description" content="Slack&#43;Notion 을 하나로 Mattermost Mattermost 란? mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다. 그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다. 즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다. self-hosting이 가능하여 직접 구축하고 운영 가능하다. mattermost 설치 간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다. 최신 버전의 mattermost 프로그램 다운로드 &#43; 압축 풀기 &#43; 옮기기 &#43; data 디렉토리 생성 wget https://releases."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://junmanbo.github.io/posts/mattermost/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://junmanbo.github.io/"
+      >Jun&#39;s Blog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/byeongjun_d"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/junmanbo"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/byeongjun_d"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/byeong-jun-kim-3a827223a"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://junmanbo.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Mattermost</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 18, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="slacknotion-을-하나로-mattermost">Slack+Notion 을 하나로 Mattermost</h1>
+<h2 id="mattermost-란">Mattermost 란?</h2>
+<ul>
+<li>mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다.</li>
+<li>그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다.</li>
+<li>즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다.</li>
+<li>self-hosting이 가능하여 직접 구축하고 운영 가능하다.</li>
+</ul>
+<h2 id="mattermost-설치">mattermost 설치</h2>
+<ul>
+<li>간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다.</li>
+<li>최신 버전의 mattermost 프로그램 다운로드 + 압축 풀기 + 옮기기 + data 디렉토리 생성</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://releases.mattermost.com/9.4.1/mattermost-9.4.1-linux-amd64.tar.gz
+</span></span><span style="display:flex;"><span>tar -xvzf mattermost-9.4.1-linux-amd64.tar.gz
+</span></span><span style="display:flex;"><span>mv mattermost /opt
+</span></span><span style="display:flex;"><span>mkdir /opt/mattermost/data
+</span></span></code></pre></div><ul>
+<li>mattermost 유저&amp;그룹 생성 + 권한 부여</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd --system --user-group mattermost
+</span></span><span style="display:flex;"><span>chown -R mattermost:mattermost /opt/mattermost
+</span></span><span style="display:flex;"><span>chmod -R g+w /opt/mattermost
+</span></span></code></pre></div><ul>
+<li>서비스 등록 (Rocky Linux 기준) /lib/systemd/system/mattermost.service</li>
+</ul>
+<pre tabindex="0"><code>[Unit]
+Description=Mattermost
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/opt/mattermost/bin/mattermost
+TimeoutStartSec=3600
+KillMode=mixed
+Restart=always
+RestartSec=10
+WorkingDirectory=/opt/mattermost
+User=mattermost
+Group=mattermost
+LimitNOFILE=49152
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><ul>
+<li>서비스 활성화 및 실행</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl enable mattermost.service
+</span></span><span style="display:flex;"><span>systemctl start mattermost.service
+</span></span></code></pre></div><p>하지만 여기서 에러가 발생한다. 아직 DB 연결을 안해줘서 그렇다.<br>
+그럼 이제 연결할 DB인 PostgreSQL 설치 및 설정으로 넘어가자.</p>
+<h2 id="postgresql-설치-및-설정">PostgreSQL 설치 및 설정</h2>
+<ul>
+<li>dnf를 이용하여 PostgreSQL 설치</li>
+<li>DB 초기화</li>
+<li>DB 서비스 실행</li>
+<li>DB 접속</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnf install postgresql postgresql-contrib postgresql-server
+</span></span><span style="display:flex;"><span>/usr/bin/postgresql-setup --initdb
+</span></span><span style="display:flex;"><span>sudo --login --user postgres
+</span></span><span style="display:flex;"><span>psql
+</span></span></code></pre></div><ul>
+<li>PostgreSQL에서 mattermost용 유저 및 데이터베이스 생성</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> mmuser PASSWORD <span style="color:#e6db74">&#39;password&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> PG_USER; <span style="color:#75715e">-- 전체 유저 및 유저에 대한 권한 확인
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> mattermost <span style="color:#66d9ef">OWNER</span> mmuser;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> PG_DATABASE; <span style="color:#75715e">-- 생성된 데이터베이스 및 부여된 권한 확인
+</span></span></span></code></pre></div><ul>
+<li>하지만 내가 사용한 PostgreSQL 13버전은 기본적으로 접속 방법이 ident로 되어있다. 이럴 경우 password로 접속이 되지 않는다.</li>
+<li>pg_hba.conf 파일에서 ident를 md5로 변경한다.</li>
+<li>DBeaver와 같은 Client 프로그램이나 외부에서 psql로 접속하려고 하는 경우에도 막혀서 안될 수 있다. 원격접속을 허용하기 위해서 postgresql.conf 파일에서 listen_address를 &lsquo;*&rsquo; 로 바꿔주거나 ip를 지정해 줘야 한다.</li>
+</ul>
+<h2 id="mattermost와-postgresql-연동">Mattermost와 PostgreSQL 연동</h2>
+<ul>
+<li>/opt/mattermost/config/config.json 파일 수정</li>
+<li>자신이 생성한 유저, 패스워트, 데이터베이스를 입력한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;sqlSettings&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;DriverName&#34;</span>: <span style="color:#e6db74">&#34;postgres&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;DataSource&#34;</span>: <span style="color:#960050;background-color:#1e0010">&#34;postgres</span>:<span style="color:#75715e">//mmuser:password@localhost:5432/mattermost
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><ul>
+<li>PostgreSQL이 실행되기 전에 Mattermost가 실행되어 연결이 안되는 상황을 막기 위해 service에 조건을 걸어준다.</li>
+<li>서비스 수정 (Rocky Linux 기준) /lib/systemd/system/mattermost.service</li>
+</ul>
+<pre tabindex="0"><code>[Unit]
+Description=Mattermost
+After=postgresql.service
+BindsTo=postgresql.service
+
+[Service]
+Type=notify
+ExecStart=/opt/mattermost/bin/mattermost
+TimeoutStartSec=3600
+KillMode=mixed
+Restart=always
+RestartSec=10
+WorkingDirectory=/opt/mattermost
+User=mattermost
+Group=mattermost
+LimitNOFILE=49152
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><h2 id="방화벽-설정">방화벽 설정</h2>
+<ul>
+<li>firewall-cmd를 이용해 기본적으로 전부 막혀있는 Inbound를 원하는 포트만 허용한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firewall-cmd --zone<span style="color:#f92672">=</span>public --permanent --add-port<span style="color:#f92672">=</span>8065/tcp,5432/tcp
+</span></span><span style="display:flex;"><span>firewall-cmd --reload
+</span></span><span style="display:flex;"><span>firewall-cmd --zone<span style="color:#f92672">=</span>public --list-all
+</span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://junmanbo.github.io/">Jun&#39;s Blog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
