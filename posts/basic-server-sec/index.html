@@ -162,7 +162,7 @@ SSH 로그 확인 /var/log/auth.log 에서 서버에 접속한 기록들을 볼 
   <link rel="apple-touch-icon" href="https://junmanbo.github.io/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.120.4">
+  <meta name="generator" content="Hugo 0.121.2">
 
   
   
@@ -190,8 +190,7 @@ SSH 로그 확인 /var/log/auth.log 에서 서버에 접속한 기록들을 볼 
 
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="기본 서버 보안 설정"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="기본 서버 보안 설정"/>
 <meta name="twitter:description" content="서비스를 하다 보니 내 서버를 누가 털어가지 않을까 항상 걱정된다.
 그래서 기초적인 보안 설정으로 서버에 접속하는걸 막아보고자 한다.
 접속 log 확인 우선 누가 실제로 접속을 시도했는지 확인해 본다.
@@ -359,8 +358,7 @@ SSH 로그 확인 /var/log/auth.log 에서 서버에 접속한 기록들을 볼 
     
   </header>
 
-  <section>
-    <p>서비스를 하다 보니 내 서버를 누가 털어가지 않을까 항상 걱정된다.<br>
+  <section><p>서비스를 하다 보니 내 서버를 누가 털어가지 않을까 항상 걱정된다.<br>
 그래서 기초적인 보안 설정으로 서버에 접속하는걸 막아보고자 한다.</p>
 <h2 id="접속-log-확인">접속 log 확인</h2>
 <p>우선 누가 실제로 접속을 시도했는지 확인해 본다.</p>
@@ -450,9 +448,7 @@ logpath=/var/log/auth.log
 <p>비슷하게 iptables로 더 구체적인 규칙을 만들고 설정할 수 있어서 외국IP로 추정되는 것들을(특히 중국) 미리 등록해 놓고 차단 시키는 방법을 사용할 수도 있다.</p>
 <p>그리고 RDS나 다른 서비스를 이용하려면 EC2에서만 접속할 수 있도록 설정한 다음 ssh로 터널링을 해서 접속한다. 그러면 다른 서비스에도 접속하기 어렵지 않을까?<br>
 이 부분은 더 공부해서 정리해 봐야 겠다.</p>
-
-    
-  </section>
+</section>
 
   
   
@@ -477,7 +473,7 @@ logpath=/var/log/auth.log
   class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2023
+    &copy; 2024
     <a class="link" href="https://junmanbo.github.io/">Jun&#39;s Blog</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

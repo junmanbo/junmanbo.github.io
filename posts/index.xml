@@ -13,18 +13,14 @@
       <link>https://junmanbo.github.io/posts/basic-server-sec/</link>
       <pubDate>Tue, 21 Nov 2023 04:05:47 +0900</pubDate>
       <guid>https://junmanbo.github.io/posts/basic-server-sec/</guid>
-      <description>서비스를 하다 보니 내 서버를 누가 털어가지 않을까 항상 걱정된다.
-그래서 기초적인 보안 설정으로 서버에 접속하는걸 막아보고자 한다.
-접속 log 확인 우선 누가 실제로 접속을 시도했는지 확인해 본다.
-SSH 로그 확인 /var/log/auth.log 에서 서버에 접속한 기록들을 볼 수 있다. 접속시도한 내용 확인 grep sshd.*Did /var/log/auth.log | less 접속시도 했으나 실패한 내용 확인 grep sshd.Failed /var/log/auth.log | less 그런데 이미 누가 접속을 성공해서 내 서버를 마음대로 쓰고 있을 수 있기 때문에 실패한 걸로만 보고 방심하면 안 된다.</description>
+      <description>서비스를 하다 보니 내 서버를 누가 털어가지 않을까 항상 걱정된다.&#xA;그래서 기초적인 보안 설정으로 서버에 접속하는걸 막아보고자 한다.&#xA;접속 log 확인 우선 누가 실제로 접속을 시도했는지 확인해 본다.&#xA;SSH 로그 확인 /var/log/auth.log 에서 서버에 접속한 기록들을 볼 수 있다. 접속시도한 내용 확인 grep sshd.*Did /var/log/auth.log | less 접속시도 했으나 실패한 내용 확인 grep sshd.Failed /var/log/auth.log | less 그런데 이미 누가 접속을 성공해서 내 서버를 마음대로 쓰고 있을 수 있기 때문에 실패한 걸로만 보고 방심하면 안 된다.</description>
     </item>
     <item>
       <title>Test Post</title>
       <link>https://junmanbo.github.io/posts/test-post/</link>
       <pubDate>Sat, 28 Oct 2023 11:49:11 +0900</pubDate>
       <guid>https://junmanbo.github.io/posts/test-post/</guid>
-      <description>This is my first post! Hello world!
-sequenceDiagram Alice-&gt;&gt;+John: Hello John, how are you? Alice-&gt;&gt;+John: John, can you hear me? John--&gt;&gt;-Alice: Hi Alice, I can hear you! John--&gt;&gt;-Alice: I feel great! </description>
+      <description>This is my first post! Hello world!&#xA;sequenceDiagram&#xD;Alice-&amp;gt;&amp;gt;+John: Hello John, how are you?&#xD;Alice-&amp;gt;&amp;gt;+John: John, can you hear me?&#xD;John--&amp;gt;&amp;gt;-Alice: Hi Alice, I can hear you!&#xD;John--&amp;gt;&amp;gt;-Alice: I feel great! </description>
     </item>
   </channel>
 </rss>
