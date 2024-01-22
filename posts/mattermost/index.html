@@ -169,7 +169,7 @@
   <meta itemprop="name" content="Mattermost">
 <meta itemprop="description" content="Slack&#43;Notion 을 하나로 Mattermost Mattermost 란? mattermost 는 slack 과 유사한 오픈소스 프로젝트로 채널별로 글을 남기거나 개인 메세지를 보낼 수 있다. 그리고 다양한 plugin을 지원한다. 여기에 focalboard라는 plugin이 있는데 이건 notion과 유사하다. 즉, slack 에서 쓰는 것 처럼 채널을 파서 관련된 프로젝트를 연결하여 문서화 할 수 있다. self-hosting이 가능하여 직접 구축하고 운영 가능하다. mattermost 설치 간단하게 도커로 배포할 수 있지만 여기서는 실행파일을 직접 받아와서 설치하는 방식으로 해본다. 최신 버전의 mattermost 프로그램 다운로드 &#43; 압축 풀기 &#43; 옮기기 &#43; data 디렉토리 생성 wget https://releases."><meta itemprop="datePublished" content="2024-01-18T15:46:28+09:00" />
 <meta itemprop="dateModified" content="2024-01-18T15:46:28+09:00" />
-<meta itemprop="wordCount" content="349">
+<meta itemprop="wordCount" content="570">
 <meta itemprop="keywords" content="" />
   
   <meta property="og:title" content="Mattermost" />
@@ -460,7 +460,45 @@ WantedBy=multi-user.target
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firewall-cmd --zone<span style="color:#f92672">=</span>public --permanent --add-port<span style="color:#f92672">=</span>8065/tcp,5432/tcp
 </span></span><span style="display:flex;"><span>firewall-cmd --reload
 </span></span><span style="display:flex;"><span>firewall-cmd --zone<span style="color:#f92672">=</span>public --list-all
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><p>그리고 URL로 접속하면 다음과 같이 접속이 된다!</p>
+<p><img src="/images/mattermost_login.png" alt="mattermost"></p>
+<p>여기서 &lsquo;계정이 없으십니까?&rsquo; 를 누르면 회원가입을 할 수 있는데 처음 가입한 사람은 관리자로 가입 가능하고 그 다음부터는 일반 유저로 가입된다.<br>
+그런데 일반 유저는 기본적으로 그냥 URL로 들어가서 접속할 수 없도록 막혀있다. 그러므로 관리자 계정에서 초대링크를 받아 접속해야 한다.</p>
+<h2 id="mattermost에서-focalboard-사용하기">Mattermost에서 Focalboard 사용하기</h2>
+<h3 id="focalboard란">Focalboard란?</h3>
+<p>notion과 같이 페이지 단위로 문서를 작성하고 이걸 데이터베이스와 같이 활용 가능한 도구이다. 그래서 프로젝트 협업 툴로 사용하기 좋다.<br>
+notion은 비싸기도 하지만 Focalboard는 직접 self-hosting해서 사용할 수 있기 때문에 데이터베이스에 있는 데이터도 직접 접근 가능해서 자동화 프로그램을 개발한다던가 여러가지로 활용하기 좋다.</p>
+<ul>
+<li>mattermost plugin 활성화</li>
+</ul>
+<p>mattermost 메뉴 - 관리자 통합도구 - 플러그인 - 플러그인 관리<br>
+로 들어가서 플러그인 활성화 버튼을 누른다. 그리고 플러그인 파일을 업로드해서 설치할 수 있는 듯 보이지만 안돼서 그냥 직접 넣어주었다.</p>
+<p><img src="/images/mattermost_plugin.png" alt="mattermost"></p>
+<ul>
+<li>focalboard plugin 다운로드 + 설치</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/mattermost/focalboard/releases/download/v7.10.6/mattermost-plugin-focalboard.tar.gz <span style="color:#75715e"># 가장 최신 버전으로 다운로드</span>
+</span></span><span style="display:flex;"><span>tar -xzvf mattermost-plugin-focalboard.tar.gz <span style="color:#75715e"># 압축풀기</span>
+</span></span><span style="display:flex;"><span>mv ./focalboard /opt/mattermost/plugins/ <span style="color:#75715e"># plugin 안으로 이동</span>
+</span></span></code></pre></div><ul>
+<li>설치 끝 - mattermost 안에 board 탭 생성</li>
+</ul>
+<p><img src="/images/focalboard_menu.png" alt="mattermost"></p>
+<h2 id="사용">사용</h2>
+<ul>
+<li>Focalboard</li>
+</ul>
+<p><img src="/images/focalboard_notion.png" alt="mattermost"></p>
+<p>여기 화면을 보면 노션과 매우 유사하게 속성을 설정하고 문서를 작성할 수 있다.</p>
+<ul>
+<li>Mattermost</li>
+</ul>
+<p>Mattermost 에서는 slack과 같이 채널을 생성하고 채널에 글을 남길 수 있다.<br>
+Focalboard가 plugin으로 들어가 있기 때문에 특정 프로젝트를 연결하여 채널에 전달사항을 남기고 보드에 문서를 작성하는 방식으로 진행할 수 있다.</p>
+<p><img src="/images/mattermost_slack.png" alt="mattermost"></p>
+<p>다음에는 nginx로 proxy 설정을 하고 도메인을 연결하고 https로 바꾸는 작업까지 해보겠다.<br>
+그리고나서 안정적으로 운영하기 위해 DB이중화 및 Prometheus와 Grafana를 이용한 서버 모니터링 작업을 진행하겠다.</p>
+</section>
 
   
   
