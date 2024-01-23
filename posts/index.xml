@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Jun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 18 Jan 2024 15:46:28 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jan 2024 16:41:55 +0900</lastBuildDate>
     <atom:link href="https://junmanbo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx proxy 연결</title>
+      <link>https://junmanbo.github.io/posts/mattermost_nginx/</link>
+      <pubDate>Mon, 22 Jan 2024 16:41:55 +0900</pubDate>
+      <guid>https://junmanbo.github.io/posts/mattermost_nginx/</guid>
+      <description>Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.&#xA;여기에 도메인과 http를 연결하도록 config 파일을 만들어준다.&#xA;/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server의 server_name의 도메인은 자신의 상황에 맞게 수정한다. upstream backend {&#xD;server 10.10.10.2:8065;&#xD;keepalive 32;&#xD;}&#xD;proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;&#xD;server {&#xD;listen 80 default_server;&#xD;server_name mattermost.example.com;&#xD;return 301 https://$server_name$request_uri;&#xD;}&#xD;server {&#xD;listen 443 ssl http2;&#xD;server_name mattermost.example.com;&#xD;http2_push_preload on; # Enable HTTP/2 Server Push&#xD;ssl on;&#xD;ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.</description>
+    </item>
     <item>
       <title>Mattermost</title>
       <link>https://junmanbo.github.io/posts/mattermost/</link>
