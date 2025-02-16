@@ -1,0 +1,60 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#FF4D4D;--font-size:17.5px}</style><title>Network Topology</title>
+<meta name=description content="네트워크 구성 설명하기"><meta name=keywords content='blog,gokarna,devops,network'><meta property="og:url" content="https://junmanbo.github.io/posts/network-topology/"><meta property="og:type" content="website"><meta property="og:title" content="Network Topology"><meta property="og:description" content="네트워크 구성 설명하기"><meta property="og:image" content="https://junmanbo.github.io/images/jun_avatar.jpg"><meta property="og:image:secure_url" content="https://junmanbo.github.io/images/jun_avatar.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Network Topology"><meta name=twitter:description content="네트워크 구성 설명하기"><meta property="twitter:domain" content="https://junmanbo.github.io/posts/network-topology/"><meta property="twitter:url" content="https://junmanbo.github.io/posts/network-topology/"><meta name=twitter:image content="https://junmanbo.github.io/images/jun_avatar.jpg"><link rel=canonical href=https://junmanbo.github.io/posts/network-topology/><link rel=stylesheet type=text/css href=/css/normalize.min.css media=print><link rel=stylesheet type=text/css href=/css/main.min.css><link id=dark-theme rel=stylesheet href=/css/dark.min.css><script src=/js/bundle.min.275fedb6f364c8865658bae576d82b514ace973f6a13ed63503a85b20c697453.js integrity="sha256-J1/ttvNkyIZWWLrldtgrUUrOlz9qE+1jUDqFsgxpdFM="></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css integrity=sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js integrity=sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})})</script></head><body><script>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=avatar><a href=https://junmanbo.github.io/><img src=/images/jun_avatar.jpg alt="Kim Byeong Jun"></a></div><div class=nav-title><a class=nav-brand href=https://junmanbo.github.io/>Jun's Blog</a></div><div class=nav-links><div class=nav-link><a href=https://junmanbo.github.io/ aria-label><span data-feather=home></span> Home</a></div><div class=nav-link><a href=https://junmanbo.github.io/posts/ aria-label><span data-feather=book></span> Posts</a></div><div class=nav-link><a href=https://junmanbo.github.io/projects/ aria-label><span data-feather=code></span> Projects</a></div><div class=nav-link><a href=https://junmanbo.github.io/tags/ aria-label><span data-feather=tag></span> Tags</a></div><div class=nav-link><a href=https://github.com/junmanbo aria-label=github><span data-feather=github></span></a></div><div class=nav-link><a href=https://junmanbo.github.io/index.xml aria-label=rss><span data-feather=rss></span></a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a aria-hidden=true role=switch><span class=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+<a aria-checked=false aria-labelledby=hamburger-menu-toggle id=hamburger-menu-toggle-target role=switch><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=https://junmanbo.github.io/><span data-feather=home></span> Home</a></li><li class=nav-item><a href=https://junmanbo.github.io/posts/><span data-feather=book></span> Posts</a></li><li class=nav-item><a href=https://junmanbo.github.io/projects/><span data-feather=code></span> Projects</a></li><li class=nav-item><a href=https://junmanbo.github.io/tags/><span data-feather=tag></span> Tags</a></li><li class=nav-item><a href=https://github.com/junmanbo><span data-feather=github></span></a></li><li class=nav-item><a href=https://junmanbo.github.io/index.xml><span data-feather=rss></span></a></li><li class="nav-item dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a role=switch><span class=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content><div class="post container"><div class=post-header-section><h1>Network Topology</h1><small role=doc-subtitle>네트워크 구성 설명하기</small><p class=post-date>February 16, 2025</p><ul class=post-tags><li class=post-tag><a href=https://junmanbo.github.io/tags/network>network</a></li></ul></div><div class=post-content><p>네트워크 구성 방식에는 여러 가지가 있으며, 각 방식은 고유한 장단점을 가지고 있습니다. 주요 네트워크 구성 방식과 그들의 장단점을 그래프와 함께 설명드릴게요.</p><h3 id=1-스타형-star-topology>1. 스타형 (Star Topology)</h3><pre tabindex=0><code>      +----+
+      |Hub |
+      +--+-+
+         | 
+  +------+------+
+  |      |      |
++---+  +---+  +---+
+|PC1|  |PC2|  |PC3|
++---+  +---+  +---+
+</code></pre><p><strong>장점:</strong></p><ul><li>중앙 허브 또는 스위치를 통해 모든 노드가 연결되어 있어 관리가 용이합니다.</li><li>중앙 장치에 문제가 없는 한 각 노드의 장애가 전체 네트워크에 영향을 미치지 않습니다.</li><li>새로운 장치를 추가하거나 제거하는 것이 간단합니다.</li></ul><p><strong>단점:</strong></p><ul><li>중앙 장치가 고장 나면 전체 네트워크가 중단됩니다.</li><li>설치 비용이 많이 들 수 있습니다.</li><li>중앙 장치에 트래픽이 집중되어 성능 저하가 발생할 수 있습니다.</li></ul><h3 id=2-링형-ring-topology>2. 링형 (Ring Topology)</h3><pre tabindex=0><code>+---+    +---+
+|PC1|----|PC2|
++---+    +---+
+  |        |
+  |        |
++---+    +---+
+|PC4|----|PC3|
++---+    +---+
+</code></pre><p><strong>장점:</strong></p><ul><li>데이터 전송이 고정된 경로를 따라 순환하므로 충돌이 적습니다.</li><li>중간 노드에서 데이터를 중계하여 신호가 약해지지 않습니다.</li></ul><p><strong>단점:</strong></p><ul><li>한 노드가 고장 나면 전체 네트워크가 중단될 수 있습니다.</li><li>데이터 전송 지연이 발생할 수 있습니다.</li><li>네트워크 확장이 어려울 수 있습니다.</li></ul><h3 id=3-버스형-bus-topology>3. 버스형 (Bus Topology)</h3><pre tabindex=0><code>+---+    +---+    +---+
+|PC1|----|PC2|----|PC3|
++---+    +---+    +---+
+         |
+       +---+
+       |PC4|
+       +---+
+</code></pre><p><strong>장점:</strong></p><ul><li>설치와 확장이 비교적 간단하고 저렴합니다.</li><li>케이블 사용량이 적어 비용 효율적입니다.</li></ul><p><strong>단점:</strong></p><ul><li>중앙 버스가 고장 나면 전체 네트워크가 중단됩니다.</li><li>트래픽이 증가하면 성능이 저하될 수 있습니다.</li><li>장애 발생 시 문제를 찾기가 어려울 수 있습니다.</li></ul><h3 id=4-망형-mesh-topology>4. 망형 (Mesh Topology)</h3><pre tabindex=0><code>   +---+    +---+
+  /|PC1|----|PC2|\
+ / +---+    +---+ \
+/    |        |    \
++----|--------|----+
+|   +---+    +---+  |
+|   |PC4|----|PC3|  |
+|   +---+    +---+  |
+ \    |        |    /
+  \   +---+    +---+
+   \--|PC5|----|PC6|
+      +---+    +---+
+</code></pre><p><strong>장점:</strong></p><ul><li>모든 노드가 서로 연결되어 있어 높은 신뢰성을 제공합니다.</li><li>한 경로가 고장 나더라도 다른 경로로 데이터 전송이 가능합니다.</li><li>확장성이 뛰어납니다.</li></ul><p><strong>단점:</strong></p><ul><li>설치와 유지보수가 매우 복잡하고 비용이 많이 듭니다.</li><li>케이블과 포트 수가 많아져 하드웨어 비용이 증가할 수 있습니다.</li></ul><h3 id=5-트리형-tree-topology>5. 트리형 (Tree Topology)</h3><pre tabindex=0><code>        +---+
+        |Hub|
+        +--+-+
+           |
+  +--------+--------+
+  |                 |
++---+             +---+
+|S1 |             |S2 |
++---+             +---+
+  |                 |
++---+             +---+
+|PC1|             |PC2|
++---+             +---+
+  |
++---+
+|PC3|
++---+
+</code></pre><p><strong>장점:</strong></p><ul><li>계층 구조로 확장성과 유연성이 좋습니다.</li><li>부분적인 네트워크 장애가 전체 네트워크에 미치는 영향을 최소화할 수 있습니다.</li></ul><p><strong>단점:</strong></p><ul><li>루트 노드 또는 주요 중계 노드가 고장 나면 네트워크 전체에 영향을 줄 수 있습니다.</li><li>관리와 유지보수가 복잡할 수 있습니다.</li></ul></div><div class=prev-next></div><svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6.0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9.0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9.0L7 329.7c-9.4-9.4-9.4-24.6.0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+<script>let backToTopButton=document.getElementById("btt-button");window.onscroll=function(){scrollFunction()};function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?backToTopButton.style.display="block":backToTopButton.style.display="none"}function scrollToTop(){window.scrollTo(0,0)}</script></div><aside class=post-toc><nav id=toc><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#1-스타형-star-topology>1. 스타형 (Star Topology)</a></li><li><a href=#2-링형-ring-topology>2. 링형 (Ring Topology)</a></li><li><a href=#3-버스형-bus-topology>3. 버스형 (Bus Topology)</a></li><li><a href=#4-망형-mesh-topology>4. 망형 (Mesh Topology)</a></li><li><a href=#5-트리형-tree-topology>5. 트리형 (Tree Topology)</a></li></ul></li></ul></li></ul></nav></nav></aside></main><footer class=footer><span>&copy; 2025 The Kim Byeong Jun</span>
+<span>Made with &#10084;&#65039; using <a target=_blank href=https://github.com/gokarna-theme/gokarna-hugo>Gokarna</a></span></footer></body></html>

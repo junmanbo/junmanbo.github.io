@@ -1,518 +1,12 @@
-<!doctype html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg: #faf8f1"
-  lang="ko-kr"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Nginx proxy 연결 - Jun&#39;s Blog</title>
-
-  
-  <meta name="theme-color" />
-
-  
-  
-  
-  
-  <meta name="description" content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#FF4D4D;--font-size:17.5px}</style><title>Nginx proxy 연결</title>
+<meta name=description content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
 여기에 도메인과 http를 연결하도록 config 파일을 만들어준다.
-/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server의 server_name의 도메인은 자신의 상황에 맞게 수정한다. upstream backend {server 10.10.10.2:8065;keepalive 32;}proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;server {listen 80 default_server;server_name mattermost.example.com;return 301 https://$server_name$request_uri;}server {listen 443 ssl http2;server_name mattermost.example.com;http2_push_preload on; # Enable HTTP/2 Server Pushssl on;ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain." />
-  <meta name="author" content="Byeong Jun Kim" />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://junmanbo.github.io/main.min.css" />
-
-  
-  
-  
-  
-  
-  <link rel="preload" as="image" href="https://junmanbo.github.io/theme.svg" />
-
-  
-  
-  
-  
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/63fbb3d8610cb35740025d0020d3232a?s=160&amp;d=identicon" />
-  
-  
-
-  
-  
-  <link rel="preload" as="image" href="https://junmanbo.github.io/twitter.svg" />
-  
-  <link rel="preload" as="image" href="https://junmanbo.github.io/github.svg" />
-  
-  <link rel="preload" as="image" href="https://junmanbo.github.io/instagram.svg" />
-  
-  <link rel="preload" as="image" href="https://junmanbo.github.io/linkedin.svg" />
-  
-  <link rel="preload" as="image" href="https://junmanbo.github.io/rss.svg" />
-  
-  
-
-  
-  
-
-  
-  
-  
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
-  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
-  crossorigin="anonymous"
-/>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
-  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
-  crossorigin="anonymous"
-></script>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
-  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
-  crossorigin="anonymous"
-></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () =>
-        renderMathInElement(document.body, {
-          
-          
-          delimiters: [
-              {left: '$$', right: '$$', display: true},
-              {left: '$', right: '$', display: false},
-          ],
-          
-          throwOnError : false
-        })
-    );
-</script>
-
-  
-  
-  
-
-  
-  <link rel="icon" href="https://junmanbo.github.io/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://junmanbo.github.io/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.121.2">
-
-  
-  
-  
-  
-  
-  <meta itemprop="name" content="Nginx proxy 연결">
-<meta itemprop="description" content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
+/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server …"><meta name=keywords content='blog,gokarna,devops'><meta property="og:url" content="https://junmanbo.github.io/posts/mattermost_nginx/"><meta property="og:type" content="website"><meta property="og:title" content="Nginx proxy 연결"><meta property="og:description" content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
 여기에 도메인과 http를 연결하도록 config 파일을 만들어준다.
-/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server의 server_name의 도메인은 자신의 상황에 맞게 수정한다. upstream backend {server 10.10.10.2:8065;keepalive 32;}proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;server {listen 80 default_server;server_name mattermost.example.com;return 301 https://$server_name$request_uri;}server {listen 443 ssl http2;server_name mattermost.example.com;http2_push_preload on; # Enable HTTP/2 Server Pushssl on;ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain."><meta itemprop="datePublished" content="2024-01-22T16:41:55+09:00" />
-<meta itemprop="dateModified" content="2024-01-22T16:41:55+09:00" />
-<meta itemprop="wordCount" content="374">
-<meta itemprop="keywords" content="" />
-  
-  <meta property="og:title" content="Nginx proxy 연결" />
-<meta property="og:description" content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
+/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server …"><meta property="og:image" content="https://junmanbo.github.io/images/jun_avatar.jpg"><meta property="og:image:secure_url" content="https://junmanbo.github.io/images/jun_avatar.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Nginx proxy 연결"><meta name=twitter:description content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
 여기에 도메인과 http를 연결하도록 config 파일을 만들어준다.
-/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server의 server_name의 도메인은 자신의 상황에 맞게 수정한다. upstream backend {server 10.10.10.2:8065;keepalive 32;}proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;server {listen 80 default_server;server_name mattermost.example.com;return 301 https://$server_name$request_uri;}server {listen 443 ssl http2;server_name mattermost.example.com;http2_push_preload on; # Enable HTTP/2 Server Pushssl on;ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://junmanbo.github.io/posts/mattermost_nginx/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-22T16:41:55+09:00" />
-<meta property="article:modified_time" content="2024-01-22T16:41:55+09:00" />
-
-
-  
-  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Nginx proxy 연결"/>
-<meta name="twitter:description" content="Mattermost와 Nginx 연결 기본적으로 mattermost는 8065 port로 포팅된다.
-여기에 도메인과 http를 연결하도록 config 파일을 만들어준다.
-/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server의 server_name의 도메인은 자신의 상황에 맞게 수정한다. upstream backend {server 10.10.10.2:8065;keepalive 32;}proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;server {listen 80 default_server;server_name mattermost.example.com;return 301 https://$server_name$request_uri;}server {listen 443 ssl http2;server_name mattermost.example.com;http2_push_preload on; # Enable HTTP/2 Server Pushssl on;ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain."/>
-
-  
-  
-  
-  <link rel="canonical" href="https://junmanbo.github.io/posts/mattermost_nginx/" />
-  
-  
-</head>
-
-  <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a
-      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
-      href="https://junmanbo.github.io/"
-      >Jun&#39;s Blog</a
-    >
-    <div
-      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#faf8f1'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
-  >
-    
-    
-
-    
-    <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
-    >
-      
-      <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/byeongjun_d"
-        target="_blank"
-        rel="me"
-      >
-        twitter
-      </a>
-      
-      <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/junmanbo"
-        target="_blank"
-        rel="me"
-      >
-        github
-      </a>
-      
-      <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/byeongjun_d"
-        target="_blank"
-        rel="me"
-      >
-        instagram
-      </a>
-      
-      <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./linkedin.svg)"
-        href="https://linkedin.com/in/byeong-jun-kim-3a827223a"
-        target="_blank"
-        rel="me"
-      >
-        linkedin
-      </a>
-      
-      <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://junmanbo.github.io/index.xml"
-        target="_blank"
-        rel="alternate"
-      >
-        rss
-      </a>
-      
-    </nav>
-    
-  </div>
-</header>
-
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
-    >
-      
-
-<article>
-  <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">Nginx proxy 연결</h1>
-
-    
-    <div class="text-sm antialiased opacity-60">
-      
-      <time>Jan 22, 2024</time>
-      
-      
-      
-      
-    </div>
-    
-  </header>
-
-  <section><h2 id="mattermost와-nginx-연결">Mattermost와 Nginx 연결</h2>
-<p>기본적으로 mattermost는 8065 port로 포팅된다.<br>
-여기에 도메인과 http를 연결하도록 config 파일을 만들어준다.</p>
-<ul>
-<li><code>/etc/nginx/conf.d/mattermost.conf</code></li>
-<li>upstream에 server 주소와 server의 server_name의 도메인은 자신의 상황에 맞게 수정한다.</li>
-</ul>
-<pre tabindex="0"><code>upstream backend {
-   server 10.10.10.2:8065;
-   keepalive 32;
-}
-
-proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
-
-server {
-  listen 80 default_server;
-  server_name   mattermost.example.com;
-  return 301 https://$server_name$request_uri;
-}
-
-server {
-   listen 443 ssl http2;
-   server_name    mattermost.example.com;
-
-   http2_push_preload on; # Enable HTTP/2 Server Push
-
-   ssl on;
-   ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
-   ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
-   ssl_session_timeout 1d;
-
-   # Enable TLS versions (TLSv1.3 is required upcoming HTTP/3 QUIC).
-   ssl_protocols TLSv1.2 TLSv1.3;
-
-   # Enable TLSv1.3&#39;s 0-RTT. Use $ssl_early_data when reverse proxying to
-   # prevent replay attacks.
-   #
-   # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
-   ssl_early_data on;
-
-   ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384&#39;;
-   ssl_prefer_server_ciphers on;
-   ssl_session_cache shared:SSL:50m;
-   # HSTS (ngx_http_headers_module is required) (15768000 seconds = six months)
-   add_header Strict-Transport-Security max-age=15768000;
-   # OCSP Stapling ---
-   # fetch OCSP records from URL in ssl_certificate and cache them
-   ssl_stapling on;
-   ssl_stapling_verify on;
-
-   add_header X-Early-Data $tls1_3_early_data;
-
-   location ~ /api/v[0-9]+/(users/)?websocket$ {
-       proxy_set_header Upgrade $http_upgrade;
-       proxy_set_header Connection &#34;upgrade&#34;;
-       client_max_body_size 50M;
-       proxy_set_header Host $http_host;
-       proxy_set_header X-Real-IP $remote_addr;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-       proxy_set_header X-Frame-Options SAMEORIGIN;
-       proxy_buffers 256 16k;
-       proxy_buffer_size 16k;
-       client_body_timeout 60;
-       send_timeout 300;
-       lingering_timeout 5;
-       proxy_connect_timeout 90;
-       proxy_send_timeout 300;
-       proxy_read_timeout 90s;
-       proxy_http_version 1.1;
-       proxy_pass http://backend;
-   }
-
-   location / {
-       client_max_body_size 50M;
-       proxy_set_header Connection &#34;&#34;;
-       proxy_set_header Host $http_host;
-       proxy_set_header X-Real-IP $remote_addr;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-       proxy_set_header X-Frame-Options SAMEORIGIN;
-       proxy_buffers 256 16k;
-       proxy_buffer_size 16k;
-       proxy_read_timeout 600s;
-       proxy_cache mattermost_cache;
-       proxy_cache_revalidate on;
-       proxy_cache_min_uses 2;
-       proxy_cache_use_stale timeout;
-       proxy_cache_lock on;
-       proxy_http_version 1.1;
-       proxy_pass http://backend;
-   }
-}
-
-# This block is useful for debugging TLS v1.3. Please feel free to remove this
-# and use the `$ssl_early_data` variable exposed by NGINX directly should you
-# wish to do so.
-map $ssl_early_data $tls1_3_early_data {
-  &#34;~.&#34; $ssl_early_data;
-  default &#34;&#34;;
-}
-</code></pre><p>그럼 이제 80번으로는 접속이 가능하다.<br>
-하지만 인증서가 없으므로 https로는 접속이 불가능하다.</p>
-<p>무료로 인증을 받을 수 있는 Let&rsquo;s encrypt를 이용하여 인증서를 발급 받고 적용해보자.</p>
-<h2 id="ssl-인증서-발급">SSL 인증서 발급</h2>
-<ul>
-<li>Certbot 설치</li>
-<li>Certbot으로 인증서 발급</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install epel-release
-</span></span><span style="display:flex;"><span>sudo dnf install certbot python3-certbot-nginx
-</span></span><span style="display:flex;"><span>sudo certbot --nginx -d example.com -d www.example.com
-</span></span></code></pre></div><ul>
-<li>Certbot 인증서 갱신</li>
-<li>cronjob 으로 등록하여 주기적으로 자동으로 갱신하도록 설정</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo crontab -e
-</span></span></code></pre></div><pre tabindex="0"><code>0 0,12 * * * python -c &#39;import random; import time; time.sleep(random.random() * 3600)&#39; &amp;&amp; certbot renew --quiet
-</code></pre><p><img src="/images/mattermost_nginx.png" alt="mattermost"></p>
-<p>그리고 설정한 주소로 접속하면 위와 같이 https로 안전하게 들어갈 수 있다!</p>
-</section>
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-</article>
-
-
-    </main>
-
-    <footer
-  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-  <div class="mr-auto">
-    &copy; 2024
-    <a class="link" href="https://junmanbo.github.io/">Jun&#39;s Blog</a>
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >Powered by Hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >✎ Paper</a
-  >
-</footer>
-
-  </body>
-</html>
+/etc/nginx/conf.d/mattermost.conf upstream에 server 주소와 server …"><meta property="twitter:domain" content="https://junmanbo.github.io/posts/mattermost_nginx/"><meta property="twitter:url" content="https://junmanbo.github.io/posts/mattermost_nginx/"><meta name=twitter:image content="https://junmanbo.github.io/images/jun_avatar.jpg"><link rel=canonical href=https://junmanbo.github.io/posts/mattermost_nginx/><link rel=stylesheet type=text/css href=/css/normalize.min.css media=print><link rel=stylesheet type=text/css href=/css/main.min.css><link id=dark-theme rel=stylesheet href=/css/dark.min.css><script src=/js/bundle.min.275fedb6f364c8865658bae576d82b514ace973f6a13ed63503a85b20c697453.js integrity="sha256-J1/ttvNkyIZWWLrldtgrUUrOlz9qE+1jUDqFsgxpdFM="></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css integrity=sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js integrity=sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})})</script></head><body><script>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=avatar><a href=https://junmanbo.github.io/><img src=/images/jun_avatar.jpg alt="Kim Byeong Jun"></a></div><div class=nav-title><a class=nav-brand href=https://junmanbo.github.io/>Jun's Blog</a></div><div class=nav-links><div class=nav-link><a href=https://junmanbo.github.io/ aria-label><span data-feather=home></span> Home</a></div><div class=nav-link><a href=https://junmanbo.github.io/posts/ aria-label><span data-feather=book></span> Posts</a></div><div class=nav-link><a href=https://junmanbo.github.io/projects/ aria-label><span data-feather=code></span> Projects</a></div><div class=nav-link><a href=https://junmanbo.github.io/tags/ aria-label><span data-feather=tag></span> Tags</a></div><div class=nav-link><a href=https://github.com/junmanbo aria-label=github><span data-feather=github></span></a></div><div class=nav-link><a href=https://junmanbo.github.io/index.xml aria-label=rss><span data-feather=rss></span></a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a aria-hidden=true role=switch><span class=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+<a aria-checked=false aria-labelledby=hamburger-menu-toggle id=hamburger-menu-toggle-target role=switch><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=https://junmanbo.github.io/><span data-feather=home></span> Home</a></li><li class=nav-item><a href=https://junmanbo.github.io/posts/><span data-feather=book></span> Posts</a></li><li class=nav-item><a href=https://junmanbo.github.io/projects/><span data-feather=code></span> Projects</a></li><li class=nav-item><a href=https://junmanbo.github.io/tags/><span data-feather=tag></span> Tags</a></li><li class=nav-item><a href=https://github.com/junmanbo><span data-feather=github></span></a></li><li class=nav-item><a href=https://junmanbo.github.io/index.xml><span data-feather=rss></span></a></li><li class="nav-item dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a role=switch><span class=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content></main><footer class=footer><span>&copy; 2024 The Kim Byeong Jun</span>
+<span>Made with &#10084;&#65039; using <a target=_blank href=https://github.com/gokarna-theme/gokarna-hugo>Gokarna</a></span></footer></body></html>
